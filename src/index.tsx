@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 import './services/firebase';
-
+import GlobalStyle from './styles/global';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <GlobalStyle/>
   </React.StrictMode>,
   document.getElementById('root')
 );
