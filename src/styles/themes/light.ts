@@ -13,6 +13,7 @@ export default {
     lightGray: '#DBDCDD',
     background: '#F8F8F8',
     text: '#FFFFFF',
+    border: '#E2E2E2',
     details: '#FEFEFE',
     darkPink: '#E559F9',
     lightPink: '#D67EE2',
