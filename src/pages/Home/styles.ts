@@ -118,4 +118,9 @@ export const Form = styled.form`
     background: ${theme.colors.text};
     border: 1px solid ${theme.colors.darkGray};
   }
+
+  button {
+    margin-top: 16px;
+    width: 100%;
+  }
 `;

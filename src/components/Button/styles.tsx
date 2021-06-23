@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import theme from '../../styles/themes/light';
 
 export const Container = styled.button`
-  margin-top: 16px;
-  width: 100%;
   height: 50px;
   border-radius: 8px;
   font-weight: 400;
