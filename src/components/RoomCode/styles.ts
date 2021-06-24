@@ -6,6 +6,7 @@ export const Container = styled.button`
   height: 40px;
   border-radius: 8px;
   overflow: hidden;
+  align-items: center;
 
   background: ${theme.colors.text};
   border: 1px solid ${theme.colors.purple};
@@ -16,7 +17,8 @@ export const Container = styled.button`
   div {
     background: ${theme.colors.purple};
     padding: 0 12px;
-    height: 40px;
+    align-self: stretch;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

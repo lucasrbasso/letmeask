@@ -1,9 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import theme from '../../styles/themes/light'
 
-interface LikeButtonProps {
-  isLiked?: boolean;
-}
 
 export const Container = styled.div``;
 
@@ -21,6 +18,16 @@ export const HeaderContent = styled.div`
 
   > img {
     max-height: 45px;
+  }
+
+  > div {
+    display: flex;
+    gap: 16px;
+
+    button {
+      height: 40px;
+      font-weight: 500;
+    }
   }
 `;
 
@@ -108,7 +115,7 @@ export const QuestionList = styled.div`
   margin-top: 32px;
 `;
 
-export const LikeButton = styled.button<LikeButtonProps>`
+export const DeleteButton = styled.button`
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -117,23 +124,6 @@ export const LikeButton = styled.button<LikeButtonProps>`
 
   color: ${theme.colors.darkGray};
   gap: 8px;
-
-  ${props =>
-    props.isLiked &&
-    css`
-      color: ${theme.colors.purple};
-
-      svg path {
-        stroke: ${theme.colors.purple};
-      }
-    `
-  }
-
-  transition: filter 0.2s;
-
-  &:hover {
-    filter: brightness(0.8);
-  }
 `;
 
 
