@@ -1,7 +1,12 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from '../../styles/themes/light';
 
-export const Container = styled.div`
+interface QuestionProps {
+  isAnswered?: boolean
+  isHighlighted?: boolean;
+}
+
+export const Container = styled.div<QuestionProps>`
   background: ${theme.colors.details};
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
@@ -21,13 +26,29 @@ export const Container = styled.div`
     align-items: center;
     margin-top: 24px;
   }
+
+  ${props =>
+    props.isHighlighted &&
+    css`
+      background-color: ${theme.colors.highlight};
+      border: 1px solid ${theme.colors.purple};
+    `
+  }
+
+${props =>
+    props.isAnswered &&
+    css`
+      background-color: ${theme.colors.lightGray};
+      color: ${theme.colors.purple};
+    `
+  }
 `;
 
 export const UserInfo = styled.footer`
   display: flex;
 `;
 
-export const UserInfoContent = styled.div`
+export const UserInfoContent = styled.div<QuestionProps>`
     display: flex;
     align-items: center;
 
@@ -42,4 +63,12 @@ export const UserInfoContent = styled.div`
     color: ${theme.colors.darkGray};
     font-size: 14px;
   }
+
+  ${props =>
+    props.isHighlighted &&
+    css`
+      span {
+        color: ${theme.colors.black};
+      }
+    `}
 `;

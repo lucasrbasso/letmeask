@@ -18,6 +18,7 @@ export const Container = styled.button`
     background: ${theme.colors.purple};
     padding: 0 12px;
     align-self: stretch;
+    justify-self: stretch;
     height: 100%;
     display: flex;
     justify-content: center;

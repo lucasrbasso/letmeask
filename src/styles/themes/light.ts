@@ -17,5 +17,6 @@ export default {
     details: '#FEFEFE',
     darkPink: '#E559F9',
     lightPink: '#D67EE2',
+    highlight: '#F4F0FF',
   },
 };

@@ -115,7 +115,7 @@ export const QuestionList = styled.div`
   margin-top: 32px;
 `;
 
-export const DeleteButton = styled.button`
+export const FuncButton = styled.button`
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -124,6 +124,12 @@ export const DeleteButton = styled.button`
 
   color: ${theme.colors.darkGray};
   gap: 8px;
+`;
+
+export const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
 `;
 
 
