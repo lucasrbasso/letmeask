@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../styles/themes/light'
-
 
 export const Container = styled.div`
   display: flex;
@@ -10,8 +8,8 @@ export const Container = styled.div`
 
 export const Banner = styled.aside`
   flex: 7;
-  background-color: ${theme.colors.purple};
-  color: ${theme.colors.text};
+  background-color: ${props => props.theme.colors.secondaryBackground};
+  color: ${props => props.theme.colors.text};
 
   display: flex;
   flex-direction: column;
@@ -33,7 +31,7 @@ export const Banner = styled.aside`
     font-size: 24px;
     line-height: 32px;
     margin-top: 16px;
-    color: ${theme.colors.background};
+    color: ${props => props.theme.colors.text};
   }
 `;
 
@@ -60,18 +58,18 @@ export const Content = styled.div`
 
   h2 {
     font-size: 24px;
-    color: ${theme.colors.black};
+    color: ${props => props.theme.colors.black};
     margin: 64px 0 24px;
     font-family: 'Poppins', sans-serif
   }
 
   p {
     font-size: 14px;
-    color: ${theme.colors.darkGray};
+    color: ${props => props.theme.colors.darkGray};
     margin-top: 16px;
 
     a {
-      color: ${theme.colors.darkPink};
+      color: ${props => props.theme.colors.darkPink};
     }
   }
 `;
@@ -82,8 +80,8 @@ export const Form = styled.form`
     width: 100%;
     border-radius: 8px;
     padding: 0 16px;
-    background: ${theme.colors.text};
-    border: 1px solid ${theme.colors.darkGray};
+    background: ${props => props.theme.colors.details};
+    border: 1px solid ${props => props.theme.colors.formBorder};
   }
 
   button {

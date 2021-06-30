@@ -1,12 +1,15 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import theme from '../../styles/themes/light'
 
+interface FuncButtonProps {
+  isHighlighted?: boolean;
+}
 
 export const Container = styled.div``;
 
 export const Header = styled.header`
   padding: 24px;
-  border-bottom: 1px solid ${theme.colors.border};
+  border-bottom: 1px solid ${props => props.theme.colors.border};
 `;
 
 export const HeaderContent = styled.div`
@@ -44,15 +47,15 @@ export const RoomTitle = styled.div`
   h1 {
     font-family: 'Poppins', sans-serif;
     font-size: 24px;
-    color: ${theme.colors.black};
+    color: ${props => props.theme.colors.black};
   }
 
   span {
     margin-left: 16px;
-    background: ${theme.colors.darkPink};
+    background: ${props => props.theme.colors.darkPink};
     border-radius: 9999px;
     padding: 8px 16px;
-    color: ${theme.colors.text};
+    color: ${props => props.theme.colors.text};
     font-weight: 500;
     font-size: 14px;
   }
@@ -64,7 +67,7 @@ export const Form = styled.form`
     border: 0;
     padding: 16px;
     border-radius: 8px;
-    background: ${theme.colors.details};
+    background: ${props => props.theme.colors.details};;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
     resize: vertical;
     min-height: 130px;
@@ -79,13 +82,13 @@ export const FormFooter = styled.div`
 
   > span {
     font-size: 14px;
-    color: ${theme.colors.darkGray};
+    color: ${props => props.theme.colors.darkGray};;
     font-weight: 500;
 
     button {
       background: transparent;
       border: none;
-      color: ${theme.colors.purple};
+      color: ${props => props.theme.colors.purple};
       text-decoration: underline;
       font-size: 14px;
       font-weight: 500px;
@@ -105,7 +108,7 @@ export const UserInfo = styled.div`
 
   span {
     margin-left: 8px;
-    color: ${theme.colors.black};
+    color: ${props => props.theme.colors.black};
     font-weight: 500;
     font-size: 14px;
   }
@@ -115,7 +118,7 @@ export const QuestionList = styled.div`
   margin-top: 32px;
 `;
 
-export const FuncButton = styled.button`
+export const FuncButton = styled.button<FuncButtonProps>`
   border: 0;
   background: transparent;
   cursor: pointer;
@@ -123,6 +126,31 @@ export const FuncButton = styled.button`
   align-items: flex-end;
 
   color: ${theme.colors.darkGray};
+
+  &:hover:not(:disabled) {
+    color: ${props => props.theme.colors.purpleHighlight};
+
+    svg path {
+      stroke: ${props => props.theme.colors.purpleHighlight};
+    }
+  }
+
+  ${props =>
+    props.isHighlighted &&
+    css`
+      color: ${props => props.theme.colors.purpleHighlight};
+
+      svg path {
+        stroke: ${props => props.theme.colors.purpleHighlight};
+      }
+    }
+    `
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+
   gap: 8px;
 `;
 
@@ -131,7 +159,4 @@ export const ButtonsContainer = styled.div`
   flex-direction: row;
   gap: 16px;
 `;
-
-
-
 

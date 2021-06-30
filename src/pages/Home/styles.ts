@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../styles/themes/light'
 
 
 export const Container = styled.div`
@@ -10,8 +9,8 @@ export const Container = styled.div`
 
 export const Banner = styled.aside`
   flex: 7;
-  background-color: ${theme.colors.purple};
-  color: ${theme.colors.text};
+  background-color: ${props => props.theme.colors.secondaryBackground};
+  color: ${props => props.theme.colors.text};
 
   display: flex;
   flex-direction: column;
@@ -33,7 +32,7 @@ export const Banner = styled.aside`
     font-size: 24px;
     line-height: 32px;
     margin-top: 16px;
-    color: ${theme.colors.background};
+    color: ${props => props.theme.colors.text};
   }
 `;
 
@@ -65,8 +64,8 @@ export const ButtonLogin = styled.button`
   border-radius: 8px;
   font-weight: 400;
   font-size: 16px;
-  background: ${theme.colors.gmail};
-  color: ${theme.colors.text};
+  background: ${props => props.theme.colors.gmail};
+  color: ${props => props.theme.colors.text};
 
   display: flex;
   justify-content: center;
@@ -86,7 +85,7 @@ export const ButtonLogin = styled.button`
 
 export const Divider = styled.div`
   font-size: 14px;
-  color: ${theme.colors.mediumGray};
+  color: ${props => props.theme.colors.mediumGray};
 
   margin: 32px 0;
   display: flex;
@@ -96,7 +95,7 @@ export const Divider = styled.div`
     content: '';
     flex: 1;
     height: 1px;
-    background: ${theme.colors.mediumGray};
+    background: ${props => props.theme.colors.mediumGray};
     margin-right: 16px;
   };
 
@@ -104,7 +103,7 @@ export const Divider = styled.div`
     content: '';
     flex: 1;
     height: 1px;
-    background: ${theme.colors.mediumGray};
+    background: ${props => props.theme.colors.mediumGray};
     margin-left: 16px;
   };
 `;
@@ -115,8 +114,8 @@ export const Form = styled.form`
     width: 100%;
     border-radius: 8px;
     padding: 0 16px;
-    background: ${theme.colors.text};
-    border: 1px solid ${theme.colors.darkGray};
+    background: ${props => props.theme.colors.details};
+    border: 1px solid ${props => props.theme.colors.formBorder};
   }
 
   button {

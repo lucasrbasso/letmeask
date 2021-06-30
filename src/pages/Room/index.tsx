@@ -1,12 +1,19 @@
 import { FormEvent, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import logoImg from '../../assets/images/logo.svg';
+
+
 import { Button } from '../../components/Button';
+import { Logo } from '../../components/Logo';
 import { Question } from '../../components/Question';
 import { RoomCode } from '../../components/RoomCode';
+import { SwitchButton } from '../../components/Switch';
+
 import { useAuth } from '../../hooks/useAuth';
 import { useRoom } from '../../hooks/useRoom';
+
+
 import { database } from '../../services/firebase';
+
 
 import {
   Container,
@@ -26,7 +33,6 @@ type RoomParams = {
 }
 
 export function Room() {
-
   const { user } = useAuth();
   const [ newQuestion, setNewQuestion ] = useState('');
 
@@ -71,14 +77,14 @@ export function Room() {
     } else {
       await database.ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`).remove()
     }
-
   }
 
   return (
     <Container>
       <Header>
         <HeaderContent>
-          <img src={logoImg} alt=""/>
+          <SwitchButton />
+          <Logo />
           <RoomCode code={roomId} />
         </HeaderContent>
       </Header>

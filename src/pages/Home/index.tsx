@@ -4,13 +4,14 @@ import { useAuth } from '../../hooks/useAuth';
 
 import illustrationImg from '../../assets/images/illustration.svg';
 import googleIconImg from '../../assets/images/google-icon.svg';
-import logoImg from '../../assets/images/logo.svg'
 
 import { Button } from '../../components/Button';
 
 import { Container, Banner, Main, Content, ButtonLogin, Divider, Form } from './styles';
 import { FormEvent, useState } from 'react';
 import { database } from '../../services/firebase';
+import { SwitchButton } from '../../components/Switch';
+import { Logo } from '../../components/Logo';
 
 
 export function Home() {
@@ -59,7 +60,8 @@ export function Home() {
       </Banner>
       <Main>
         <Content>
-          <img src={logoImg} alt="Letmeask"></img>
+          <SwitchButton />
+          <Logo />
           <ButtonLogin onClick={handleCreateRoom}>
             <img src={googleIconImg} alt="Logo do Google" />
             Crie sua sala com o Google

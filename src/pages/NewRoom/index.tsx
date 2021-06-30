@@ -3,12 +3,13 @@ import { Link, useHistory } from 'react-router-dom';
 import { Container, Banner, Main, Content, Form } from './styles'
 
 import illustrationImg from '../../assets/images/illustration.svg';
-import logoImg from '../../assets/images/logo.svg'
 import { Button } from '../../components/Button';
 
 import { useAuth } from '../../hooks/useAuth';
 import { FormEvent, useState } from 'react';
 import { database } from '../../services/firebase';
+import { SwitchButton } from '../../components/Switch';
+import { Logo } from '../../components/Logo';
 
 export function NewRoom() {
   const [newRoom, setNewRoom] = useState('');
@@ -43,7 +44,8 @@ export function NewRoom() {
       </Banner>
       <Main>
         <Content>
-          <img src={logoImg} alt="Letmeask"></img>
+          <SwitchButton />
+          <Logo />
           <h2>Criar uma nova sala</h2>
           <Form onSubmit={handleCreateRoom}>
             <input
