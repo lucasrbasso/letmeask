@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import theme from '../../styles/themes/light';
 
 interface ContainerProps {
   isOutlined?: boolean
@@ -10,8 +9,8 @@ export const Container = styled.button<ContainerProps>`
   border-radius: 8px;
   font-weight: 400;
   font-size: 16px;
-  background: ${theme.colors.purple};
-  color: ${theme.colors.text};
+  background: ${props => props.theme.colors.purple};
+  color: ${props => props.theme.colors.text};
   padding: 0 32px;
 
   display: flex;
@@ -25,8 +24,8 @@ export const Container = styled.button<ContainerProps>`
     props.isOutlined &&
     css`
       background: transparent;
-      border: 1px solid ${theme.colors.purple};
-      color: ${theme.colors.purple};
+      border: 1px solid ${props => props.theme.colors.purple};;
+      color: ${props => props.theme.colors.purple};;
   `}
 
   img {

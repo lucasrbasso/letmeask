@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import theme from '../../styles/themes/light';
 
 interface QuestionProps {
   isAnswered?: boolean
@@ -7,7 +6,7 @@ interface QuestionProps {
 }
 
 export const Container = styled.div<QuestionProps>`
-  background: ${theme.colors.details};
+  background: ${props => props.theme.colors.details};
   border-radius: 8px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
   padding: 24px;
@@ -17,7 +16,7 @@ export const Container = styled.div<QuestionProps>`
   }
 
   p {
-    color: ${theme.colors.black};
+    color: ${props => props.theme.colors.black};
   }
 
   footer {
@@ -30,16 +29,16 @@ export const Container = styled.div<QuestionProps>`
   ${props =>
     props.isHighlighted &&
     css`
-      background-color: ${theme.colors.highlight};
-      border: 1px solid ${theme.colors.purple};
+      background-color: ${props => props.theme.colors.highlight};
+      border: 1px solid ${props => props.theme.colors.purpleHighlight};
     `
   }
 
 ${props =>
     props.isAnswered &&
     css`
-      background-color: ${theme.colors.lightGray};
-      color: ${theme.colors.purple};
+      background-color: ${props => props.theme.colors.answered};
+      color: ${props => props.theme.colors.purple};
     `
   }
 `;
@@ -60,7 +59,7 @@ export const UserInfoContent = styled.div<QuestionProps>`
 
   span {
     margin-left: 8px;
-    color: ${theme.colors.darkGray};
+    color: ${props => props.theme.colors.darkGray};
     font-size: 14px;
   }
 
@@ -68,7 +67,7 @@ export const UserInfoContent = styled.div<QuestionProps>`
     props.isHighlighted &&
     css`
       span {
-        color: ${theme.colors.black};
+        color: ${props => props.theme.colors.black};
       }
     `}
 `;

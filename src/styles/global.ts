@@ -5,12 +5,12 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    outline: 0;
+    outline-color: ${props => props.theme.colors.purple};
   }
 
   body {
-    background: #F8F8F8;
-    color: #29292e;
+    background: ${props => props.theme.colors.background};
+    color: ${props => props.theme.colors.darkGray};
     -webkit-font-smoothing: antialiased;
   }
 
