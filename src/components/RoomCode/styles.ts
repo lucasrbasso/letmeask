@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import theme from '../../styles/themes/light'
-
 
 export const Container = styled.button`
   height: 40px;
@@ -8,14 +6,15 @@ export const Container = styled.button`
   overflow: hidden;
   align-items: center;
 
-  background: ${theme.colors.text};
-  border: 1px solid ${theme.colors.purple};
+  background: transparent;
+  border: 1px solid ${props => props.theme.colors.purple};
+  color: ${props => props.theme.colors.black};
   cursor: pointer;
 
   display: flex;
 
   div {
-    background: ${theme.colors.purple};
+    background: ${props => props.theme.colors.purple};
     padding: 0 12px;
     align-self: stretch;
     justify-self: stretch;

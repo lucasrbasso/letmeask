@@ -1,6 +1,6 @@
 import copyImg from '../../assets/images/copy.svg';
 
-import { Container } from './styles'
+import { Container } from './styles';
 
 type RoomCodeProps = {
   code: string;
