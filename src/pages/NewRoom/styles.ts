@@ -33,6 +33,10 @@ export const Banner = styled.aside`
     margin-top: 16px;
     color: ${props => props.theme.colors.text};
   }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
 
 export const Main = styled.main`
@@ -42,6 +46,11 @@ export const Main = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1024px) {
+    flex: 1;
+    padding: 0 16px;
+  }
 `;
 
 export const Content = styled.div`
@@ -72,6 +81,19 @@ export const Content = styled.div`
       color: ${props => props.theme.colors.darkPink};
     }
   }
+
+  @media (max-width: 1024px) {
+    width: 90%;
+
+    h2 {
+      font-size: 18px;
+      margin: 48px 0 24px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -82,6 +104,7 @@ export const Form = styled.form`
     padding: 0 16px;
     background: ${props => props.theme.colors.details};
     border: 1px solid ${props => props.theme.colors.formBorder};
+    color: ${props => props.theme.colors.black};
   }
 
   button {

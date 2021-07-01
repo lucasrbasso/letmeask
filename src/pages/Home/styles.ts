@@ -34,7 +34,13 @@ export const Banner = styled.aside`
     margin-top: 16px;
     color: ${props => props.theme.colors.text};
   }
+
+  @media (max-width: 1024px) {
+    display: none;
+  }
 `;
+
+
 
 export const Main = styled.main`
   flex: 8;
@@ -55,6 +61,10 @@ export const Content = styled.div`
 
   > img {
     align-self: center;
+  }
+
+  @media (max-width: 1024px) {
+    width: 90%;
   }
 `;
 
@@ -80,6 +90,12 @@ export const ButtonLogin = styled.button`
 
   &:hover {
     filter: brightness(0.9);
+  }
+
+  @media (max-width: 320px) {
+    img {
+      display: none;
+    }
   }
 `;
 
@@ -116,6 +132,7 @@ export const Form = styled.form`
     padding: 0 16px;
     background: ${props => props.theme.colors.details};
     border: 1px solid ${props => props.theme.colors.formBorder};
+    color: ${props => props.theme.colors.black};
   }
 
   button {

@@ -33,4 +33,14 @@ export const Container = styled.button`
     font-size: 14px;
     font-weight: 500;
   }
+
+  @media (max-width: 1024px) {
+    font-size: 13px;
+  }
+
+  @media (max-width: 720px) {
+    span {
+      display: none;
+    }
+  }
 `;

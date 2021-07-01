@@ -5,7 +5,21 @@ interface FuncButtonProps {
   isHighlighted?: boolean;
 }
 
-export const Container = styled.div``;
+export const Container = styled.div`
+    @media (max-width: 1024px) {
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 400px
+  }
+`;
 
 export const Header = styled.header`
   padding: 24px;
@@ -14,10 +28,16 @@ export const Header = styled.header`
 
 export const HeaderContent = styled.div`
   max-width: 1120px;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 16px;
+  }
 
   > img {
     max-height: 45px;
@@ -32,11 +52,22 @@ export const HeaderContent = styled.div`
       font-weight: 500;
     }
   }
+
+  @media (max-width: 768px) {
+    > img {
+      display: none;
+    }
+  }
 `;
 
 export const Content = styled.main`
   max-width: 800px;
+  width: 90%;
   margin: 0 auto;
+
+  @media (max-width: 768px) {
+    max-width: 400px;
+  }
 `;
 
 export const RoomTitle = styled.div`
@@ -58,59 +89,15 @@ export const RoomTitle = styled.div`
     color: ${props => props.theme.colors.text};
     font-weight: 500;
     font-size: 14px;
-  }
-`;
 
-export const Form = styled.form`
-  textarea {
-    width: 100%;
-    border: 0;
-    padding: 16px;
-    border-radius: 8px;
-    background: ${props => props.theme.colors.details};;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-    resize: vertical;
-    min-height: 130px;
-  }
-`;
-
-export const FormFooter = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 16px;
-
-  > span {
-    font-size: 14px;
-    color: ${props => props.theme.colors.darkGray};;
-    font-weight: 500;
-
-    button {
-      background: transparent;
-      border: none;
-      color: ${props => props.theme.colors.purple};
-      text-decoration: underline;
-      font-size: 14px;
-      font-weight: 500px;
+    @media (max-width: 768px) {
+      font-size: 9px;
+      padding: 8px 8px;
     }
   }
-`;
 
-export const UserInfo = styled.div`
-  display: flex;
-  align-items: center;
-
-  img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-  }
-
-  span {
-    margin-left: 8px;
-    color: ${props => props.theme.colors.black};
-    font-weight: 500;
-    font-size: 14px;
+  @media (max-width: 768px) {
+    font-size: 13px;
   }
 `;
 
@@ -158,5 +145,9 @@ export const ButtonsContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    gap: 5px;
+  }
 `;
 

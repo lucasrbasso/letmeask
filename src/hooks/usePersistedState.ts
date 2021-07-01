@@ -7,14 +7,13 @@ type Response<T> = [
 
 function usePersistedState<T>(key: string, initialState: any): Response<T> {
   const [state, setState] = useState(() => {
-    return initialState
-    // const storageValue = localStorage.getItem(key);
+    const storageValue = localStorage.getItem(key);
 
-    // if (storageValue) {
-    //   return JSON.parse(storageValue);
-    // } else {
-    //   return initialState;
-    // }
+    if (storageValue) {
+      return JSON.parse(storageValue);
+    } else {
+      return initialState;
+    }
   });
 
 

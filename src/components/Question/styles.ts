@@ -13,10 +13,15 @@ export const Container = styled.div<QuestionProps>`
 
   & + & {
     margin-top: 8px;
+
+    @media (max-width: 720px) {
+      margin-top: 15px;
+    }
   }
 
   p {
     color: ${props => props.theme.colors.black};
+    word-wrap: break-word;
   }
 
   footer {

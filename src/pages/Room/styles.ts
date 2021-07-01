@@ -4,7 +4,21 @@ interface LikeButtonProps {
   isLiked?: boolean;
 }
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  @media (max-width: 1024px) {
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+  }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 400px
+  }
+`;
 
 export const Header = styled.header`
   padding: 24px;
@@ -21,11 +35,22 @@ export const HeaderContent = styled.div`
   > img {
     max-height: 45px;
   }
+
+  @media (max-width: 768px) {
+    > img {
+      display: none;
+    }
+  }
 `;
 
 export const Content = styled.main`
   max-width: 800px;
   margin: 0 auto;
+  padding-bottom: 20px;
+
+  @media (max-width: 768px) {
+    max-width: 400px;
+  }
 `;
 
 export const RoomTitle = styled.div`
@@ -47,6 +72,14 @@ export const RoomTitle = styled.div`
     color: ${props => props.theme.colors.text};
     font-weight: 500;
     font-size: 14px;
+
+    @media (max-width: 768px) {
+      font-size: 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    font-size: 13px;
   }
 `;
 
@@ -61,6 +94,11 @@ export const Form = styled.form`
     color: ${props => props.theme.colors.black};
     resize: vertical;
     min-height: 130px;
+  }
+
+  @media (max-width: 768) {
+    min-height: 60px;
+    padding: 10px;
   }
 `;
 
@@ -83,6 +121,10 @@ export const FormFooter = styled.div`
       font-size: 14px;
       font-weight: 500px;
     }
+
+    @media (max-width: 768) {
+      font-size: 10px;
+    }
   }
 `;
 
@@ -101,6 +143,12 @@ export const UserInfo = styled.div`
     color: ${props => props.theme.colors.black};
     font-weight: 500;
     font-size: 14px;
+  }
+
+  @media (max-width: 768) {
+    span {
+      display: none;
+    }
   }
 `;
 
